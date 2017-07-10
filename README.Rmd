@@ -10,7 +10,6 @@ output:
     toc_depth: 4
     number_sections: true
     keep_md: true
-    fig.align: center
 csl: ecology.csl
 bibliography: References.bib
 ---
@@ -201,7 +200,7 @@ Movement data was categorised into seasons (Fig. S6). Months where precipitation
 Migration is often defined based on the distance travelled, e.g. if the animal is covering a distance which is greater than the daily average [@Cagnacci2016]. Movement data were divided into 4 segments: Southern migration, Northern migration, Southern Range, Northern Range. To define the southern migration, the mean location of all individuals between 20^th^ and 31^st^ October was calculated as a start point and the mean location of all individuals between 25^th^ - 30^th^ November was calculated as end point. These dates were based on the findings of @Bartlam-Brooks2013. For each individual the time when the individual was more than 25 km away from the start point after the 20^th^ of October was derived and used as start of the southern migration. The end of the southern migration was determined as the date when the individual was less than 5 km or the minimum distance away from the end point of the migration. For the northern migration the start point was calculated as the mean location of all individuals between the 1^st^ of March and the 1^st^ of April and the end point was calculated as the mean location between 1^st^ of June and 1^st^ of July. To start their northern migration zebras had to be more than 25 km away from the start point and to end their northern migration they had to be closer than 5km to the end point otherwise the time when the came closest to the end point was used (Table 4). Movement points in between the northern and southern migration were classified into southern or northern range accordingly (Fig. S9).
 
 ![](Figures/Angle_Dist_BWA.png)
-**Fig. 2.** {Histogram of the step length and turning angle of the zebra movement data of Botswana. Exponential (red), lognormal (blue) and halfnormal (green) distribution were fitted to the step length. A van Mises distribution was fitted to the turning angle.
+**Fig. 2.** Histogram of the step length and turning angle of the zebra movement data of Botswana. Exponential (red), lognormal (blue) and halfnormal (green) distribution were fitted to the step length. A van Mises distribution was fitted to the turning angle.
 
 The mean location of the previously defined start and end points of migration were used as departure and destination points. From these we derived a distance to point raster layer at a resolution of 30 m (Fig. S3). The goal layer was used in our step selection function models to avoid autocorrelation due to the migratory behaviour of our zebras.
 
@@ -250,7 +249,7 @@ The study area is covered by seven PAs, which cover 52.2 % of the entire study a
 summary_wdpa <- read.csv("Results/summary_wdpa.csv")[,-1]
 colnames(summary_wdpa) <- c("Name", "Designation", "IUCN Category", 
                               "Area (km2)", "Year")
-pander::pandoc.table(summary_wdpa, digits=0, split.table=Inf, missing="-") 
+pander::pandoc.table(summary_wdpa, digits=0, split.table=Inf, missing="-")
 ```
 
 The Okavango Delta System Ramsar Site actually encompasses the Okavango Delta World Heritage Site, the Maun Game Sanctuary and the Moremi Game Reserve, while the Moremi Game Reserve is also covered by the Okavango Delta World Heritage Site. Hence, there is a significant overlap in protected areas within the study area.

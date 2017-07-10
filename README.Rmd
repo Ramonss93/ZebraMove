@@ -10,10 +10,6 @@ csl: ecology.csl
 bibliography: References.bib
 ---
 
-```{r, echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE, fig.align="center")
-```
-
 <!--
 Look at Naidoo2012 and Loarie2009a for nice examples for potential publication.
 Convert awei into non-water/water classification and calculate distance to water!
@@ -97,7 +93,7 @@ In this chapter, the effectiveness of current protection measures and the habita
 
 The study area was delineated by the extent of our movement data plus a 5 % margin. It lies between 23.4° and 25.4°E Longitude and between -20.9° and -19.2°S Latitude, and covers an area of 39588 km^2^ and extends from the Okavango Delta in the northwest district to the Makgadikgadi grasslands in the central district of Botswana (Fig. 1). The area is characterised by a semi-arid climate (Fig. S1). Temperature is relatively constant through time and space and the mean temperature ranges from 15.5 to 26.2°C over the course of the year. Mean annual rainfall lies between 0 and 104 mm per month and varies between and within seasons. Most of the rainfall (325 mm) occurs during the rainy season (December - April), while during the dry season (April - December) precipitation only reaches 94 mm (Fig. S1) [@Hijmans2005]. The area is generally flat with a low variation in altitude (884 - 1018 m) (Fig. S2).
 
-![](Figures/Studyarea_BWA.png)
+![](figures/Studyarea_BWA.png)
 
 **Fig. 1.** Map of Botswana with the study area indicated in red. District boundaries are shown by white dashed lines. The location of all cities with a population of more than 40000 people is shown and the capital city is highlighted in orange. Administrative boundaries were obtained from http://www.gadm.org using the `raster` package [@Bivand2016a]. Locations of cities were obtained from the `maps` package [@Becker2016].
 
@@ -195,7 +191,7 @@ Movement data was categorised into seasons (Fig. S6). Months where precipitation
 
 Migration is often defined based on the distance travelled, e.g. if the animal is covering a distance which is greater than the daily average [@Cagnacci2016]. Movement data were divided into 4 segments: Southern migration, Northern migration, Southern Range, Northern Range. To define the southern migration, the mean location of all individuals between 20^th^ and 31^st^ October was calculated as a start point and the mean location of all individuals between 25^th^ - 30^th^ November was calculated as end point. These dates were based on the findings of @Bartlam-Brooks2013. For each individual the time when the individual was more than 25 km away from the start point after the 20^th^ of October was derived and used as start of the southern migration. The end of the southern migration was determined as the date when the individual was less than 5 km or the minimum distance away from the end point of the migration. For the northern migration the start point was calculated as the mean location of all individuals between the 1^st^ of March and the 1^st^ of April and the end point was calculated as the mean location between 1^st^ of June and 1^st^ of July. To start their northern migration zebras had to be more than 25 km away from the start point and to end their northern migration they had to be closer than 5km to the end point otherwise the time when the came closest to the end point was used (Table 4). Movement points in between the northern and southern migration were classified into southern or northern range accordingly (Fig. S9).
 
-![](Figures/Angle_Dist_BWA.png)
+![](figures/Angle_Dist_BWA.png)
 **Fig. 2.** Histogram of the step length and turning angle of the zebra movement data of Botswana. Exponential (red), lognormal (blue) and halfnormal (green) distribution were fitted to the step length. A van Mises distribution was fitted to the turning angle.
 
 The mean location of the previously defined start and end points of migration were used as departure and destination points. From these we derived a distance to point raster layer at a resolution of 30 m (Fig. S3). The goal layer was used in our step selection function models to avoid autocorrelation due to the migratory behaviour of our zebras.
@@ -227,14 +223,14 @@ NDVI showed a highly seasonal pattern (Fig. \ref{fig:ndvi_1yr_mn_bwa}). Looking 
 
 35.5 % of the study area, in particular the south-eastern corner, showed a significant increase in NDVI over the last 33 years (1981 - 2013). The slope in NDVI only varied between -5.84759e-06 and 8.478647e-06. High adjusted R^2^ values coincided with high slope values, but again adjusted R^2^ was not very high (0 - 0.15, Fig. 3).
 
-![](Figures/Gimms_NDVI_BWA.png)
+![](figures/Gimms_NDVI_BWA.png)
 **Fig. 3.** Slope and adjusted R^2^ of the GIMMS NDVI3g time series for the study area in Botswana. Green lines indicate outline of protected areas and the surrounding 5 km buffer.
 
 86.9 - 91.1 % of the study area was covered by savannas. The remainder was mostly covered by open shrublands (4.3 - 8.6 %) or barren or sparsely vegetated surfaces (3.6 - 3.9 %). The cover of savannas dropped by 4 % from 2008 - 2009, while open shrublands increased by 4 % (Table S2).
 
 From 2001 to 2013 we observed a slight drop in savanna areas and a slight increase in open shrublands, but otherwise land cover appeared to be fairly stable (Fig. 4, Fig. S5).
 
-![](Figures/MLC_Timeseries_BWA.png)
+![](figures/MLC_Timeseries_BWA.png)
 **Fig. 4.** Coverage of each land cover class from 2001 - 2013 for the study area in Botswana.
 
 The study area is covered by seven PAs, which cover 52.2 % of the entire study area. The 5 km buffer zones around the PAs covered 8.8 % of the study area. Five PAs are formally protected, that means the fall within one of the six IUCN protected area management categories [@Dudley2008]. Six PAs have been designated many years ago (1963 - 1996). The Moremi Game Reserve, an exclusive area for wildlife and wilderness conservation, has already been established in 1963, while the Okavango Delta World Heritage Site has only been inscribed in 2014 and is not designated yet. The older protected areas are generally small in size, but have a high conservation priority, while the newer protected areas cover a larger area, but have a lower designation status (Table 2). 
@@ -250,7 +246,7 @@ pander::pandoc.table(summary_wdpa, digits=0, split.table=Inf, missing="-")
 
 The Okavango Delta System Ramsar Site actually encompasses the Okavango Delta World Heritage Site, the Maun Game Sanctuary and the Moremi Game Reserve, while the Moremi Game Reserve is also covered by the Okavango Delta World Heritage Site. Hence, there is a significant overlap in protected areas within the study area.
 
-![](Figures/Gimms_Status_NDVI_BWA.png)
+![](figures/Gimms_Status_NDVI_BWA.png)
 **Fig. 5.** Adjusted R^2^ and Slope of the GIMMS NDVI3g time series for each protection status (protected, unprotected and 5 km buffer zone of the study area in Botswana.
 
 Overall, NDVI increased over the last 33 years (1981 - 2013) in each zone. The increase in NDVI was most pronounced and had a stronger fit in protected areas, compared to the buffer zone or unprotected areas (Fig. 5).
@@ -271,7 +267,7 @@ In total, zebras were tracked for 1630 days. Tracking duration varied between 72
 
 All of the seven plains zebras migrated from the Okavango Delta in the northwest to the Makgadikgadi grasslands in the southeast of Botswana (Fig 6). From June until October they resided in the north-western part of the study area, in October/November they migrated to the Makgadikgadi Pans, where they stayed until April/May when they started moving back to the Okavango Delta (Fig. S8).
 
-![](Figures/Zebra_BWA_Overview.png)
+![](figures/Zebra_BWA_Overview.png)
 **Fig. 6.** Map of study area in Botswana with movement tracks colour-coded by individual. Protected areas are depicted in lightgreen and their name is stated. Dashed brown line indicates pathway of fence running through the study area.
 
 All individuals migrated south, but one zebra (Z3864) was not tracked for long enough to record its northwards migration. Southern migration started around the beginning of November and lasted for 10 - 36 days. The average southern migration distance was 443.65 km. The start of the northern migration varied among invidiuals and years. In 2008 one individual started to migrate on the 10^th^ of May and took 11 days, the other individual started no the 9^th^ of March and took 84 days. In 2009, one individual started at the beginning of March and three individuals at the end of March and lasted for 20 - 61 days. Mean northern migration distance was 555.56 km (Table 4).
@@ -287,17 +283,17 @@ pander::pandoc.table(migration, split.table=Inf, missing="-")
 
 Average movement rate was higher during migration (0.22 m/s ± 0.28 SD) compared to residency times (0.13 m/s ± 0.18 SD), while mean absolute turning angle was lower during migration (55.24° ± 51.30 SD) compared to residency times (60.71° ± 50.91 SD) (Fig. 7).
 
-![](Figures/State_Move_BWA.png)
+![](figures/State_Move_BWA.png)
 **Fig. 7.** Absolute turning angle (°) and speed (m/s) for each migration state (Northern Range, Southern Migration, Southern Range and Northern Migration).
 
 Zebras experienced a distinctive difference in altitude throughout their migration (Fig. 8). In their northern range zebras exprienced a mean altitude of 944.69 m (± 4.88 SD), while in their southern range zebras experienced an elevation of 906.58 m (± 4.56 SD).
 
-![](Figures/Zebra_dem_BWA.png)
+![](figures/Zebra_dem_BWA.png)
 **Fig. 8.** Altitude over time experienced by each individual zebra in Botswana.
 
 During migration and residence in the Makgadikgadi Pans zebras experienced a lower NDVI compared to their residence in the Okavango Delta (Fig. 9).
 
-![](Figures/Zebra_ndvi_BWA.png)
+![](figures/Zebra_ndvi_BWA.png)
 **Fig. 9.** NDVI over time experienced by each individual zebra in Botswana.
 
 ### Zebra habitat selection
@@ -414,7 +410,7 @@ Most of the land is used for large commercial livestock ranches [@Sundaresan2008
 
 The grevy's zebra is a large-bodied (350 - 450 kg) grazing ungulate. It is the largest of the three *Equid* species. Once, the species ranged widely across the savannas of northern Kenya, Ethiopia and Somalia. Grevy's zebras have undergone a population decline of 75 % since the 1970s and currently only around 2500 individuals remain in northern Kenya and Ethiopia. Thus, they are listed as "Endangered" under the IUCN Red List of Species [@Moehlman2013]. Reasons for the population declined are habitat degradation, reduced access to waterholes and illegal killing [@Moehlman2002]. The last stronghold of Grevy's zebra is the Ewaso ecosystem in the Laikipia and Samburu districts of northern Kenya. They expanded their range into Laikipia in the beginning of the 1970s, but in this area their ecology has hardly been studied. In Laikipia, the population has grown during the last 12 years, while other parts of their range were lost. Speculated reasons for the population increase are better survival or increased immigration from other areas [@Moehlman2002; @Sundaresan2008; @Sundaresan2012]. 
 
-![](Figures/Studyarea_KEN.png)
+![](figures/Studyarea_KEN.png)
 
 **Fig. 10.** Map of Kenya with the study area highlighted in red. District boundaries are shown by white dashed lines. The location of all cities with a population of more than 40000 people is shown and capital city is highlighted in orange. Administrative boundaries were obtained from http://www.gadm.org using the `raster` package [@Bivand2016a]. Locations of cities were obtained from the `maps` package [@Becker2016].
 
@@ -426,7 +422,7 @@ In Laikipia, Grevy's zebra co-occur with the closely related and more abundant p
 
 Movement data of seven Grevy's zebras and two plains zebras was obtained from Movebank. Additional data from four adult plains zebras (females in 3 harems and 1 bachelor male) was provided by Ilya Fichhoff [@Fischhoff2007a] (Fig. 11). 
 
-![](Figures/Zebra_KEN_Overview.png)
+![](figures/Zebra_KEN_Overview.png)
 
 **Fig. 11.** Laikipia zebra movement tracks]{Map of study area with movement tracks colour-coded by individual. Protected areas are depicted in lightgreen.
 
@@ -484,13 +480,13 @@ The entire study area experienced a significant increase in NDVI from 1981 - 201
 
 Laikipia zebra movement tracks]{Map of study area with movement tracks colour-coded by individual. Protected areas are depicted in lightgreen.
 
-![](Figures/Gimms_NDVI_KEN.png)
+![](figures/Gimms_NDVI_KEN.png)
 
 **Fig. 12.** Protection trend Laikipia]{Slope and adjusted R^2^ of the GIMMS NDVI3g time series for the study area in Kenya. Green lines indicate outline of protected areas and the surrounding 5 km buffer.
 
 The majority of the study area was covered by grasslands (92.3 - 95.2 %). The remaining parts were mostly covered by open shrublands (1.5 - 5.2 %), cropland/natural vegetation mosaic (0.8 - 2.2 %) and croplands (0.1 - 1.1 %). From 2005 to 2008 percentage cover of cropland/natural vegetation mosaic, woody savannas and grasslands decreased, while open shrublands and croplands increased (Table S4).
 
-![](Figures/MLC_Timeseries_KEN.png)
+![](figures/MLC_Timeseries_KEN.png)
 **Fig. 13.** Percentage cover of each land cover class from 2001 - 2013 for the study area in Kenya.
 
 Generally, land cover appeared to be stable over time (2001 - 2013), but, an increase in savannas and cropland/natural vegetation mosaic has been observed in recent years (2011 - 2013) (Fig. 13).
@@ -507,7 +503,7 @@ pander::pandoc.table(luse_area[,c("Land use", "Percentage (%)")], digits=2)
 
 The increasing trend in NDVI was highest in the PAs and lowest in the unprotected areas. The fit of the linear regression was highest in the PAs and lowest in the unprotected areas (Fig. 14).
 
-![](Figures/Gimms_Status_NDVI_KEN.png)
+![](figures/Gimms_Status_NDVI_KEN.png)
 **Fig. 14.** Adjusted R^2^ and Slope of the GIMMS NDVI3g time series for each protection status (protected, unprotected and 5 km buffer zone) of the study area in Kenya.
 
 ### Space use
@@ -516,20 +512,20 @@ The increasing trend in NDVI was highest in the PAs and lowest in the unprotecte
 
 7 Grevy's zebras were tracked for 952 days and 6 plains zebras were tracked for 233 days. Total tracking distance varied between 42 - 3450 km, on average 1147.29 km (± 1136.29 SD) for Grevy's zebras and 361.66 km (± 599.84 SD) for plains zebras (Table 6, Fig. 11). The mean speed varied from 0.07 - 0.20 m/s and was higher for plains zebras (0.11 - 0.2 m/s) than Grevy's zebras (0.07 - 0.11 m/s). Mean step length was 238.05 m (± 102.47 SD) and mean direction varied from -63.76 to 6.71°. The size of 95 % occurrence distribution varied from 6.00 - 437.2 km^2^. Mean distribution size was higher for Grevy's (204.26 km^2^ ± 174.52 SD) compared to plains zebras (72.19 km^2^ ± 47.13 SD) (Table S5). Overlap among individuals varied from 0 - 94.6 %. Overlap among Grevy's zebras ranged from 0 - 94.6 % with an average overlap of 43.85 %, while overlap in plains zebras varied from 0 - 90.26 % with an average of 50.33 %. Overlap between Grevy's and plains zebras' occurrence distribution was 27.23 % (Fig. 15).
 
-![](Figures/AKDE_KEN.png)
+![](figures/AKDE_KEN.png)
 **Fig. 15.** Autocorrelated kernel density estimated utilisation distributions per zebra in Kenya. Protected areas are depicted in darkgreen.
 
 <!-- What is the major driver of habitat use in the two species? -->
 
 While Grevy's zebras were tracked throughout the entire year, plains zebras were only tracked from June - December. During this time, plain's zebras utilised areas with higher EVI and NDVI compared to Grevy's zebras (Fig. 16).
 
-![](Figures/vi_month_sp_KEN.png)
+![](figures/vi_month_sp_KEN.png)
 
 **Fig. 16.** EVI and NDVI and per month experienced by plains and Grevy's zebras in Kenya.
 
 Grevy's as well as plains zebras used mostly grasslands. Grevy's zebras also used open shrublands, while plains zebras used natural vegetation mosaic areas. Only PZ10 used savannas and PZ10 and PZ14 both used woody savannas (Fig. 17).
 
-![](Figures/Zebra_KEN_LULC.png)
+![](figures/Zebra_KEN_LULC.png)
 
 **Fig. 17.** Percentage of observations per land use and land cover per individual in Kenya.
 
@@ -537,7 +533,7 @@ Of the 10 different types of land use, all types apart from swamp were used by t
 
 Difference in absolute turning angle and speed between species varied among land use and land cover type. Plains zebras moved slower on ranch land and faster on settlements compared to Grevy's zebras, while absolute turning angle was higher for both in plains zebras compared to Grevy's zebras. In grasslands, plains zebras moved faster than grevy's zebras, while it was the other way around in open shrublands. Absolute turning angle of plains zebras was lower in open shrublands and higher in grasslands compared to the one of Grevy's zebras (Fig. 18).
 
-![](Figures/LULC_angle_speed_KEN.png)
+![](figures/LULC_angle_speed_KEN.png)
 
 **Fig. 18.** Speed and absolute turning angle per land cover and land use class in Kenya.
 
